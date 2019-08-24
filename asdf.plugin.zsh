@@ -26,6 +26,8 @@ switch_asdf() {
 					if [[ "$node_field" == *$gt* ]]; then
 						# if node field reads greater than, use node stable
 						echo "using latest version"
+						asdf install nodejs $(asdf list-all nodejs | tail -n1)
+						asdf local nodejs $(asdf list-all nodejs | tail -n1)
 					else
 						# otherwise, use the latest release of the specified version
 						echo "switching to node $field_version..."
@@ -35,8 +37,7 @@ switch_asdf() {
 				fi
 			fi
 		else
-			echo "\nengines field not specified in package.json"
-			echo "switching to node stable..."
+			echo "engines field not specified in package.json"
 		fi
 	fi
 }

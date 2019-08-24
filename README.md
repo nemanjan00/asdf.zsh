@@ -38,6 +38,6 @@ zgen load nemanjan00/asdf.zsh
 
 ## usage
 
-on its own, `asdf.zsh` will check for a `package.json` in the current directory. if it exists, it checks and reads the value of the node engine, and then switches to that version using n.
+on its own, `asdf.zsh` will check for a `package.json` in the current directory. if it exists, it checks and reads the value of the node engine, and then switches to that version using asdf.
 
-if the node engine reads 'greater than', `n` switches to node stable. otherwise, it switches to the specified version.
+if the node engine reads 'greater than', `asdf` switches to node stable. otherwise, it switches to the specified version.
