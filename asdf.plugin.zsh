@@ -12,11 +12,11 @@ switch_asdf() {
 
 	if [ -f 'package.json' ]; then
 		node_field=$(cat package.json | jq -r '.engines.node')
-		field_version=${node_field//[^0-9.]/}
+		field_version=${node_field}
 		gt=">"
 		current_node=$(node -v)
-		format_version=${current_node:1:2}
-		current_version=${format_version//[^0-9.]/}
+		format_version=${current_node:1:${#current_node}-1}
+		current_version=${format_version}
 		# check for an engines field
 		if $(cat package.json | jq -e 'has("engines")'); then
 			# make sure engines has a node field
