@@ -2,12 +2,12 @@ switch_asdf() {
 	# make sure jq is installed
 	if [ ! "$(command -v jq)" ]; then
 		printf "jq is not installed\ndid u even read the README 🤔"
-		exit 1
+		return
 	fi
 
 	if [ ! "$(command -v asdf)" ]; then
 		printf "asdf isn't installed\ny tho"
-		exit 1
+		return
 	fi
 
 	if [ -f 'package.json' ]; then
